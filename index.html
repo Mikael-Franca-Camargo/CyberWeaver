@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberWeaver</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="">
+    <!-- 
+      The sidebar contains all primary UI controls for the application,
+      including block creation, theme selection, and drawing tools.
+    -->
+    <div id="sidebar">
+        <h2>CyberWeaver</h2>
+        <div class="sidebar-section">
+            <button id="add-text-btn">
+                <span class="plus-icon">+</span>
+                <span class="button-text">Add Text Note</span>
+            </button>
+            <button id="add-image-btn">
+                <span class="plus-icon">⬚</span>
+                <span class="button-text">Add Image</span>
+            </button>
+            <button id="toggle-drawing-btn">
+                <span class="plus-icon">✎</span>
+                <span class="button-text">Toggle Drawing</span>
+            </button>
+            <button id="undo-drawing-btn" title="Undo Last Drawing Stroke">
+                <span class="plus-icon">↺</span>
+                <span class="button-text">Undo</span>
+            </button>
+            <!-- This container will be hidden by default and shown when drawing mode is active -->
+            <div id="drawing-color-picker" class="hidden"></div>
+        </div>
+        <div class="sidebar-section">
+            <div class="collapsible-header" role="button" aria-expanded="false" aria-controls="themes-content">
+                <h3>Themes</h3>
+                <span class="toggle-arrow"></span>
+            </div>
+            <div id="themes-content" class="collapsible-content">
+                <button class="theme-btn" data-theme="light">Light mode</button>
+                <button class="theme-btn" data-theme="dark">Dark mode</button>
+                <button class="theme-btn" data-theme="blue">Corporate Blue</button>
+                <button class="theme-btn" data-theme="detective">Detective mode</button>
+                <button class="theme-btn" data-theme="cyberpunk">Cyberpunk mode</button>
+                <div class="sidebar-option">
+                    <input type="checkbox" id="toggle-search-glow">
+                    <label for="toggle-search-glow">Enable Search Glow</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- This button lives outside the sidebar so it can remain visible when the sidebar is collapsed. -->
+    <div id="sidebar-toggle" title="Toggle Sidebar"></div>
+
+    <!-- 
+      The main workspace container. It has a `role="application"` for accessibility,
+      signaling to screen readers that this is a complex, interactive widget.
+    -->
+    <div id="workspace" class="workspace-container" role="application">
+        <!-- The canvas for drawing connection lines between blocks. -->
+        <canvas id="connection-canvas"></canvas>
+        <!-- The canvas for freehand user drawing. It sits at a higher z-index. -->
+        <canvas id="drawing-canvas"></canvas>
+    </div>
+
+    <!-- A modal dialog for confirming destructive actions, like deleting a block. -->
+    <div id="custom-confirm-overlay" class="hidden">
+        <div id="custom-confirm-dialog">
+            <p id="custom-confirm-message"></p>
+            <div class="custom-confirm-buttons">
+                <button id="custom-confirm-cancel">Cancel</button>
+                <button id="custom-confirm-ok" class="danger">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- The command palette (Ctrl+K) for quick actions and search. -->
+    <div id="command-palette-overlay" class="hidden">
+        <div id="command-palette">
+            <input type="text" id="command-input" placeholder="Type a command or search...">
+            <ul id="command-list">
+                <!-- Command items are dynamically inserted by script.js -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- A visually-hidden element used to announce actions to screen readers for accessibility. -->
+    <div id="a11y-announcer" class="visually-hidden" role="status" aria-live="polite"></div>
+
+    <!-- The tutorial overlay and popup for guiding new users. -->
+    <div id="tutorial-overlay" class="hidden">
+        <div id="tutorial-spotlight"></div>
+        <div id="tutorial-popup">
+            <h4 id="tutorial-title"></h4>
+            <p id="tutorial-content"></p>
+            <div id="tutorial-buttons">
+                <button id="tutorial-skip">Skip</button>
+                <button id="tutorial-next">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- A floating action button to re-launch the tutorial at any time. -->
+    <button id="tutorial-start-btn" title="Show Tutorial">?</button>
+    <script src="script.js"></script>
+</body>
+</html>

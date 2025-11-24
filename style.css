@@ -1,0 +1,1033 @@
+/* =================================================================================
+   THEME AND GLOBAL VARIABLES
+   ================================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+:root {
+    --bg-color: #f0f0f0;
+    --grid-color: #dad6d6;
+    --sidebar-bg: #e9e9e9;
+    --block-bg: #ffffff;
+    --block-border-color: #ccc;
+    --block-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    --header-bg: #f7f7f7;
+    --text-color: #333;
+    --button-bg: #ddd;
+    --button-hover-bg: #ccc;
+    --scrollbar-thumb-color: rgba(0, 0, 0, 0.2);
+    --scrollbar-thumb-hover-color: rgba(0, 0, 0, 0.4);
+}
+
+.theme-dark {
+    --bg-color: #2c2f33;
+    --grid-color: #444;
+    --sidebar-bg: #1b1e20;
+    --block-bg: #1d1f22;
+    --block-border-color: #1e2124;
+    --block-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    --header-bg: #282d31;
+    --text-color: #f0f0f0;
+    --button-bg: #4b4f56;
+    --button-hover-bg: #5c6067;
+    --scrollbar-thumb-color: rgba(255, 255, 255, 0.2);
+    --scrollbar-thumb-hover-color: rgba(255, 255, 255, 0.4);
+}
+
+.theme-blue {
+    --bg-color: #dcf1fd;
+    --grid-color: #d0dde4;
+    --sidebar-bg: #6492b1;
+    --block-bg: #ffffff;
+    --block-border-color: #b3cde0;
+    --block-shadow: 0 2px 5px rgba(0, 74, 124, 0.2);
+    --header-bg: #6497b1;
+    --text-color: #021929;
+    --button-bg: #b3cde0;
+    --button-hover-bg: #9ab8cc;
+    --scrollbar-thumb-color: rgba(2, 25, 41, 0.3);
+    --scrollbar-thumb-hover-color: rgba(2, 25, 41, 0.5);
+}
+.theme-blue .block { font-family: 'Lato', sans-serif; }
+
+/* --- DETECTIVE THEME --- */
+.theme-detective {
+    --bg-color: #c5a987; /* A more realistic corkboard tan color */
+    --sidebar-bg: #1b140c;
+    --block-bg: #fdfbe8; /* Aged paper color */
+    --block-border-color: #dcd8c0;
+    --block-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+    --header-bg: transparent;
+    --text-color: #f0f0f0; /* Sidebar text */
+    --button-bg: #5a4a3a;
+    --button-hover-bg: #7a6a5a;
+    --scrollbar-thumb-color: rgba(61, 53, 46, 0.4);
+    --scrollbar-thumb-hover-color: rgba(61, 53, 46, 0.6);
+    --main-text-color: #3d352e; /* Block text */
+    /* A more complex, multi-layered gradient to simulate a corkboard texture */
+    --cork-texture: 
+        radial-gradient(circle at 100% 100%, rgba(0,0,0,0.15) 0, rgba(0,0,0,0.15) 2px, transparent 2px),
+        radial-gradient(circle at 0 100%, rgba(0,0,0,0.15) 0, rgba(0,0,0,0.15) 2px, transparent 2px),
+        radial-gradient(circle at 100% 0, rgba(0,0,0,0.15) 0, rgba(0,0,0,0.15) 2px, transparent 2px),
+        radial-gradient(circle at 0 0, rgba(0,0,0,0.15) 0, rgba(0,0,0,0.15) 2px, transparent 2px),
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.1) 1px, transparent 1px),
+        radial-gradient(circle at 25% 75%, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.1) 2px, transparent 2px);
+}
+.theme-detective .block { font-family: 'Special Elite', monospace; }
+
+/* Apply a classic, literary font to the main title in Detective mode */
+.theme-detective #sidebar h2 {
+    /* Use a classic, serif font for the title */
+    font-family: 'IM Fell English', serif;
+    font-size: 2.2em;
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* --- CYBERPUNK THEME --- */
+.theme-cyberpunk {
+    --bg-color: #0a0a1a;
+    --grid-color: #1a2c4a;
+    --sidebar-bg: #050510;
+    --block-bg: rgba(0, 100, 150, 0.1); /* Semi-transparent glass */
+    /* --block-border-color and --block-shadow are now defined per-block via JS */
+    --header-bg: rgba(128, 128, 128, 0.1); /* Neutral header */
+    --text-color: #e0e0ff;
+    --button-bg: #1a2c4a;
+    --button-hover-bg: #008817; /* Magenta hover for buttons */
+    --main-text-color: #e0e0ff;
+    --scrollbar-thumb-color: rgba(0, 255, 255, 0.3);
+    --scrollbar-thumb-hover-color: rgba(0, 255, 255, 0.5);
+    --font-family: 'VT323', monospace; /* Use VT323 for block content */
+}
+
+/* Apply Orbitron to sidebar UI text in Cyberpunk mode */
+.theme-cyberpunk #sidebar {
+    font-family: 'Orbitron', sans-serif;
+}
+/* Apply Audiowide to titles in Cyberpunk mode */
+.theme-cyberpunk #sidebar h2, .theme-cyberpunk .block-title {
+    font-family: 'Audiowide', cursive;
+}
+
+/* Increase font size for note content in Cyberpunk mode for readability */
+.theme-cyberpunk .block-content {
+    font-size: 1.4em; /* Make the VT323 font significantly larger */
+    line-height: 1.5; /* Improve line spacing */
+}
+
+/* =================================================================================
+   GENERAL STYLING & ACCESSIBILITY
+   ================================================================================= */
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    overflow: hidden; /* Prevent scrollbars on the body itself */
+}
+
+/* --- Custom Scrollbar Styling (Webkit) --- */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+/* The track (the background of the scrollbar) */
+::-webkit-scrollbar-track {
+    background: transparent; /* Make the track invisible */
+}
+
+/* The draggable scrolling handle */
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-color);
+    border-radius: 5px;
+    border: 2px solid transparent; /* Creates padding around the thumb */
+    background-clip: content-box; /* Ensures the border acts as padding */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover-color);
+}
+
+/* Global cursor style for when panning is active */
+body.panning, body.panning * {
+    cursor: grabbing !important;
+}
+
+/* Global cursor style for when dragging a block is active */
+body.dragging-block, body.dragging-block * {
+    cursor: grabbing !important;
+}
+
+/* Cursor for when drawing mode is active */
+body.drawing-mode-active, body.drawing-mode-active * {
+    cursor: crosshair !important;
+}
+
+/* Apply a clear outline to focusable elements when navigating with a keyboard */
+:is(button, [role="button"], input, [contenteditable="true"]):focus-visible {
+    outline: 3px solid var(--text-color);
+    outline-offset: 2px;
+    box-shadow: 0 0 10px var(--text-color); /* Add a glow for extra visibility */
+}
+
+/* Hides an element visually but keeps it accessible to screen readers */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* =================================================================================
+   WORKSPACE & LAYOUT
+   ================================================================================= */
+
+.workspace-container {
+    position: relative;
+    flex-grow: 1;
+    transition: margin-left 0.3s ease;
+    margin-left: 0;
+    width: 100%;
+
+    height: 100vh;
+    background-color: var(--bg-color);
+    overflow: hidden; /* Prevents blocks from being dragged outside the container */
+    transition: background-color 0.3s;
+    /* Visual grid background */
+    background-image:
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* 
+  This wrapper contains all pannable/zoomable content. Applying transforms here
+  is more performant than transforming every single block and canvas individually.
+*/
+#workspace-transformer {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.1s ease-out;
+}
+/* Apply cork texture only in detective mode */
+.theme-detective .workspace-container {
+    background-image: var(--cork-texture);
+}
+
+.theme-cyberpunk .workspace-container {
+    background-image:
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px),
+        radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.05) 10%, transparent 70%);
+}
+
+/* =================================================================================
+   BLOCK STYLING
+   ================================================================================= */
+
+.block {
+    position: absolute;
+    background-color: var(--block-bg);
+    border: 1px solid var(--block-border-color);
+    box-shadow: var(--block-shadow);
+    display: flex;
+    flex-direction: column;
+    min-width: 150px; /* Prevent block from being too narrow */
+    min-height: 100px; /* Prevent block from being too short */
+    transition: box-shadow 0.2s;
+    z-index: 10;
+    color: var(--main-text-color); /* Use main text color for blocks */
+}
+
+/* Style for highlighting search results */
+.block.search-highlight {
+    box-shadow: 0 0 25px 5px #ffeb3b, inset 0 0 15px rgba(255, 235, 59, 0.5);
+    border-color: #ffeb3b;
+}
+/* Ensure the search highlight overrides the default Cyberpunk glow */
+.theme-cyberpunk .block.search-highlight {
+    border-color: #ffeb3b;
+    box-shadow: 0 0 25px 5px #ffeb3b, inset 0 0 15px rgba(255, 235, 59, 0.5);
+}
+
+/* When search glow is disabled, remove all highlight effects */
+body.search-glow-disabled .block.search-highlight {
+    box-shadow: none; /* Remove the glow */
+    border-color: var(--block-border-color); /* Revert to the block's default border color */
+}
+
+.image-block {
+    /* Make the main container transparent, as the image is the visual element */
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: var(--block-shadow) !important;
+    /* Allow title to be positioned outside */
+    overflow: visible;
+}
+
+/* The image itself gets the border */
+.image-block img {
+    border: 2px solid var(--block-bg);
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+/* Position title above the block */
+.image-block .block-title {
+    position: absolute;
+    top: -25px; /* Position above the block */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    color: var(--text-color);
+    text-shadow: 0 0 3px var(--bg-color); /* Make text readable on any background */
+    font-weight: 600;
+}
+.theme-detective .image-block .block-title {
+    /* Use the dark text color meant for blocks, not the light one for the sidebar */
+    color: var(--main-text-color);
+    /* Adjust text shadow for better readability on the cork background */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.image-block .block-content {
+    padding: 0;
+    height: 100%;
+    /* The image itself will be the drag handle */
+    cursor: move;
+}
+.image-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Hide header and footer on image blocks */
+.image-block .block-header, .image-block .block-footer {
+    display: none;
+}
+
+/* Reposition controls to the top-right corner, appearing on hover */
+.image-block .block-controls {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: none; /* Hidden by default */
+}
+.image-block:hover .block-controls {
+    display: flex; /* Show on hover */
+}
+.theme-cyberpunk .block.image-block {
+    /* Remove the clip-path from image blocks so the title isn't cut off */
+    /* Using a more specific selector to ensure override */
+    clip-path: none;
+}
+
+.theme-cyberpunk .block {
+    font-family: var(--font-family);
+    backdrop-filter: blur(3px); /* Glass effect */
+    /* Use the per-block color for border and shadow */
+    --block-neon-color: #0ff; /* Default fallback color */
+    border-color: var(--block-neon-color);
+    box-shadow: 0 0 15px var(--block-neon-color), inset 0 0 8px rgba(0, 255, 255, 0.2);
+    /* High-tech clipped corners */
+    clip-path: polygon(0 15px, 15px 0, calc(100% - 15px) 0, 100% 15px, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0 calc(100% - 15px));
+}
+
+/* --- Theme-Specific Block Overrides --- */
+
+/* Hide the pushpin on image blocks as it doesn't make sense visually */
+.theme-detective .image-block::before {
+    display: none;
+}
+
+/* Style for the pushpin on each block in detective mode */
+.theme-detective .block::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    background-color: #e74c3c; /* Red pin head */
+    border-radius: 50%;
+    border: 2px solid #c0392b;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    z-index: 30; /* Ensure pin is above the block header */
+}
+
+/* Slight rotation effect when dragging in detective mode */
+.theme-detective .block.dragging {
+    transform: rotate(2deg) scale(1.02);
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.4);
+}
+.theme-cyberpunk .block.dragging {
+    box-shadow: 0 0 35px var(--block-neon-color), 0 0 15px rgba(0, 255, 255, 0.5), inset 0 0 15px rgba(0, 255, 255, 0.4);
+    transition: box-shadow 0.2s, transform 0.2s;
+    transform: scale(1.02);
+}
+
+.block-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    background-color: var(--header-bg);
+    cursor: move; /* Indicates that this element can be moved */
+    user-select: none; /* Prevents text selection while dragging */
+    border-bottom: 1px solid var(--block-border-color);
+}
+.theme-detective .block-header {
+    border-bottom: 1px dashed var(--block-border-color);
+}
+.theme-cyberpunk .block-header {
+    border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+    text-shadow: 0 0 5px var(--block-neon-color, #0ff);
+}
+.image-block .block-header {
+    /* Override default header styles for image blocks */
+    display: none;
+}
+
+.block-title {
+    flex-grow: 1;
+    padding: 2px 4px;
+    border-radius: 3px;
+    cursor: text;
+    transition: background-color 0.2s;
+}
+
+.block-title:focus {
+    background-color: rgba(128, 128, 128, 0.2);
+    outline: 1px solid var(--grid-color);
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+
+.block-footer {
+    padding: 6px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.theme-cyberpunk .block-footer {
+    border-top: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.block-content {
+    padding: 8px;
+    flex-grow: 1; /* Allows the content area to fill the available space */
+    overflow: auto; /* Adds scrollbars if the content overflows */
+    font-size: 1.1em; /* Make the content text slightly larger for readability */
+}
+
+.resize-handle {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #999;
+    cursor: se-resize; /* Indicates that this element can be used for resizing */
+}
+.theme-detective .resize-handle {
+    background: transparent;
+    border-right: 2px solid var(--main-text-color);
+    border-bottom: 2px solid var(--main-text-color);
+    opacity: 0.5;
+    width: 15px;
+    height: 15px;
+}
+.theme-cyberpunk .resize-handle {
+    width: 15px;
+    height: 15px;
+    background: transparent;
+    border-right: 2px solid var(--block-neon-color);
+    border-bottom: 2px solid var(--block-neon-color);
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+.theme-cyberpunk .resize-handle:hover {
+    opacity: 1;
+}
+
+/* --- Cyberpunk Decorative Elements --- */
+.corner-accent {
+    display: none; /* Hidden by default */
+}
+.theme-cyberpunk .corner-accent {
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-color: var(--block-neon-color);
+    border-style: solid;
+    pointer-events: none; /* Make them non-interactive */
+}
+.corner-accent.top-left { top: 2px; left: 2px; border-width: 2px 0 0 2px; }
+.corner-accent.top-right { top: 2px; right: 2px; border-width: 2px 2px 0 0; }
+.corner-accent.bottom-left { bottom: 2px; left: 2px; border-width: 0 0 2px 2px; }
+.corner-accent.bottom-right { bottom: 2px; right: 2px; border-width: 0 2px 2px 0; }
+
+.theme-cyberpunk .connect-btn, .theme-cyberpunk .delete-btn {
+    text-shadow: 0 0 8px var(--block-neon-color, #0ff);
+    transition: color 0.2s, text-shadow 0.2s;
+}
+
+/* =================================================================================
+   CANVAS & DRAWING
+   ================================================================================= */
+
+#connection-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Allows clicks to pass through to the blocks below */
+    z-index: 5; /* Behind blocks but above background */
+}
+
+#drawing-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* By default, it's not interactive */
+    pointer-events: none;
+    /* On top of blocks and connection lines */
+    z-index: 50;
+}
+
+.connection-line {
+    stroke: #c0392b; /* Red string color */
+    stroke-width: 2;
+    stroke-dasharray: 4 2; /* Dashed line to look like string */
+    fill: none;
+}
+
+.block.connection-mode-start {
+    outline: 3px dashed #e74c3c;
+    cursor: crosshair;
+}
+
+/* =================================================================================
+   SIDEBAR & UI CONTROLS
+   ================================================================================= */
+
+#sidebar {
+    position: relative;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--sidebar-bg);
+    padding: 20px;
+    padding-top: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: background-color 0.3s, width 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+#sidebar h2, #sidebar h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--text-color);
+}
+
+#sidebar h2 {
+    border-bottom: 1px solid var(--grid-color);
+    margin-top: 10px; /* Add some space above the main title */
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+.sidebar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.collapsible-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px 0;
+    user-select: none;
+}
+
+.collapsible-header h3 {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.toggle-arrow {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-style: solid;
+    border-color: var(--text-color);
+    border-width: 0 2px 2px 0;
+    transform: rotate(-45deg); /* Points the chevron to the right */
+    transition: transform 0.3s ease;
+}
+
+.collapsible-header.active .toggle-arrow {
+    transform: rotate(45deg); /* Rotates the chevron to point down */
+}
+
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding-left: 10px; /* Indent content */
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Adds vertical spacing between buttons */
+}
+
+#sidebar button {
+    padding: 10px;
+    border: none;
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    text-align: left;
+}
+
+#sidebar button:hover {
+    background-color: var(--button-hover-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#add-text-btn, #add-image-btn, #toggle-drawing-btn, #undo-drawing-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    background-color: var(--button-bg); /* Use a slightly different bg to stand out */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+#add-text-btn:hover, #add-image-btn:hover, #toggle-drawing-btn:hover, #undo-drawing-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+}
+
+.plus-icon {
+    font-size: 1.4em; /* Makes the '+' bigger */
+    margin-right: 4px;
+}
+
+.button-text {
+    margin-left: 4px; /* Adjust space to match */
+}
+
+.sidebar-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    font-size: 0.9em;
+    flex-wrap: wrap; /* Allow content to wrap to the next line if needed */
+    cursor: pointer;
+}
+.sidebar-option label {
+    cursor: pointer;
+}
+
+#drawing-color-picker {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    padding: 5px 0;
+}
+
+.drawing-color-swatch {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.drawing-color-swatch:hover {
+    transform: scale(1.1);
+}
+
+.drawing-color-swatch.active {
+    border-color: var(--text-color);
+    transform: scale(1.2);
+}
+
+/* Hide the color picker by default */
+body:not(.drawing-mode-active) #drawing-color-picker,
+body:not(.drawing-mode-active) #undo-drawing-btn {
+    display: none;
+}
+
+#sidebar-toggle {
+    position: fixed;
+    top: 10px;
+    left: 235px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    border: 1px solid var(--grid-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 100;
+    transition: transform 0.3s ease, background-color 0.2s, left 0.3s ease;
+}
+
+#sidebar-toggle::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-style: solid;
+    border-color: var(--text-color);
+    border-width: 0 0 2px 2px;
+    transform: rotate(45deg);
+    transition: border-color 0.3s;
+}
+
+#sidebar-toggle:hover {
+    background-color: var(--button-hover-bg);
+    transform: scale(1.1);
+}
+
+body.sidebar-collapsed #sidebar {
+    width: 50px;
+}
+
+body.sidebar-collapsed #sidebar > * {
+    display: none;
+}
+
+body.sidebar-collapsed #sidebar-toggle {
+    transform: rotate(180deg);
+    left: 10px;
+}
+
+.connect-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--main-text-color);
+    padding: 0 5px;
+}
+
+.connect-btn:hover {
+    color: #e74c3c;
+}
+
+/* By default, the connect button is hidden. It's only shown in specific themes. */
+.connect-btn {
+    display: none;
+}
+
+/* Only show the connection functionality in the Detective theme. */
+.theme-detective .connect-btn {
+    display: inline-block;
+}
+
+/* Style for the new delete button */
+.delete-btn {
+    background: none;
+    border: none;
+    display: inline-flex; /* Use flexbox for centering */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #aaa;
+    font-size: 18px;
+}
+
+.delete-btn:hover {
+    color: #e74c3c;
+}
+
+.color-palette {
+    display: none; /* Hidden by default */
+    gap: 6px;
+}
+
+.theme-cyberpunk .color-palette {
+    display: flex; /* Only show in cyberpunk mode */
+}
+
+.color-picker-btn {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    padding: 0;
+    opacity: 0.5;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.color-picker-btn:hover, .color-picker-btn.active {
+    opacity: 1;
+    transform: scale(1.2);
+    border-color: #fff;
+}
+
+/* =================================================================================
+   MODALS & OVERLAYS
+   ================================================================================= */
+
+#custom-confirm-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+#custom-confirm-overlay:not(.hidden) {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#custom-confirm-dialog {
+    background-color: var(--sidebar-bg);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--grid-color);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    transform: scale(0.95);
+    transition: transform 0.2s ease;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+}
+#custom-confirm-overlay:not(.hidden) #custom-confirm-dialog {
+    transform: scale(1);
+}
+
+.custom-confirm-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.custom-confirm-buttons button.danger {
+    background-color: #c0392b;
+    color: #fff;
+}
+
+#command-palette-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+#command-palette-overlay:not(.hidden) {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#command-palette {
+    background-color: var(--sidebar-bg);
+    border-radius: 8px;
+    border: 1px solid var(--grid-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 500px;
+    margin-top: 10vh;
+    overflow: hidden;
+    transform: translateY(-20px); /* Start slightly above for animation */
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#command-input {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    border-bottom: 1px solid var(--grid-color);
+    background-color: var(--block-bg);
+    color: var(--text-color);
+    font-size: 1.2em;
+    outline: none;
+}
+
+#command-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 40vh;
+    overflow-y: auto;
+}
+
+#command-list li {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: background-color 0.1s, border-left-color 0.2s;
+    border-left: 3px solid transparent;
+}
+
+#command-list li:hover, #command-list li.selected {
+    background-color: var(--button-hover-bg);
+    border-left-color: var(--text-color);
+}
+
+.command-icon {
+    margin-right: 12px;
+    font-size: 1.1em;
+    width: 20px;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.theme-detective #command-palette {
+    font-family: 'Special Elite', monospace;
+}
+
+.theme-cyberpunk #command-list li.selected {
+    border-left-color: #0ff;
+    box-shadow: inset 0 0 15px rgba(0, 255, 255, 0.2);
+    text-shadow: 0 0 5px #0ff;
+}
+
+#command-palette-overlay:not(.hidden) #command-palette {
+    transform: translateY(0);
+}
+
+/* --- Tutorial & Floating Button --- */
+#tutorial-start-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    z-index: 100;
+    background-color: var(--button-bg);
+    border: 1px solid var(--grid-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+#tutorial-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3000;
+    transition: opacity 0.3s ease;
+}
+
+#tutorial-spotlight {
+    position: absolute;
+    border-radius: 5px;
+    /* This creates a "hole" in the overlay, highlighting the target element */
+    /* by creating a massive box-shadow that covers the entire screen, except */
+    /* for the transparent area of the element itself. */
+    box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.6);
+    transition: all 0.4s ease-in-out;
+    pointer-events: none;
+}
+
+#tutorial-popup {
+    position: absolute;
+    background-color: var(--sidebar-bg);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 300px;
+    transition: all 0.4s ease-in-out;
+    border: 1px solid var(--grid-color);
+}
+
+#tutorial-popup h4 {
+    margin-top: 0;
+    color: var(--text-color);
+}
+
+#tutorial-buttons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+#tutorial-buttons button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#tutorial-buttons #tutorial-next {
+    background-color: var(--button-hover-bg);
+}
+#tutorial-buttons #tutorial-skip {
+    background-color: var(--button-bg);
+}
+
+/* A single, reusable utility class to hide elements completely. */
+.hidden {
+    display: none !important;
+}
