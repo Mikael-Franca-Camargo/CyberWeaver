@@ -55,5 +55,3 @@ Este projeto nasceu como um **desafio pessoal** e como parte de um **portfólio 
 O objetivo foi demonstrar o que é possível criar usando apenas as ferramentas nativas da web — desde a manipulação direta do DOM até uma arquitetura de código clara e modular.
 
 O CyberWeaver mostra como é possível construir uma experiência rica, fluida e visualmente envolvente sem depender de frameworks.
-
-Espero que este repositório sirva como estudo, referência ou inspiração para outros programadores que desejam aprofundar seus conhecimentos nas tecnologias fundamentais da web.
